@@ -10,7 +10,7 @@
             @method('put')
           <div class="form-group">
             <label for="name">First Name</label>
-            <input type="text" class="form-control" name="first_name" value="{{$employee->first_name}}">
+            <input type="text" class="form-control" name="first_name" value="{{$employee->first_name}}">   
           </div>
           <div class="form-group">
             <label for="name">Last Name</label>

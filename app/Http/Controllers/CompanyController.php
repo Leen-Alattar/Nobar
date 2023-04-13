@@ -109,13 +109,19 @@ class CompanyController extends Controller
                 ->file('logo')
                 ->storeAs($destination_path, $image_name);
             $input['logo'] = $image_name;
-        }
+            Company::where('id', '=', $id)->update([
+                'name' => $request->name,
+                'email' => $request->email?? null,
+                'website' => $request->website?? null,
+                'logo' => $image_name,
+            ]);
+        }else{
         Company::where('id', '=', $id)->update([
             'name' => $request->name,
             'email' => $request->email?? null,
             'website' => $request->website?? null,
-            'logo' => $image_name,
         ]);
+    }
 
         return redirect()
             ->route('company.index')

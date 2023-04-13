@@ -23,6 +23,6 @@ Route::resource('/company', CompanyController::class);
 
 Route::resource('/employee', EmployeeController::class);
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
